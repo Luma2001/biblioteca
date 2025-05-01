@@ -26,10 +26,10 @@ namespace ColeccionesBiblioteca
         }
 
         //Getters and setters
-        public string Titulo { get { return titulo; } private set { titulo=value; } }           
-        public string Autor { get { return autor; } private set {  autor = value; } }   
-        public string Editorial { get { return editorial; } private set { editorial = value; } } 
-        public string Genero { get { return genero; } private set { genero = value; } }
+        public string Titulo { get { return titulo; } set { titulo=value; } }           
+        public string Autor { get { return autor; } set {  autor = value; } }   
+        public string Editorial { get { return editorial; } set { editorial = value; } } 
+        public string Genero { get { return genero; } set { genero = value; } }
         
         //ToString
         public override string ToString()
