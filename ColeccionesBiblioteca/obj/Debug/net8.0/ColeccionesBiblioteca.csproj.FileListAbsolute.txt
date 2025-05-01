@@ -1,0 +1,14 @@
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\bin\Debug\net8.0\ColeccionesBiblioteca.exe
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\bin\Debug\net8.0\ColeccionesBiblioteca.deps.json
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\bin\Debug\net8.0\ColeccionesBiblioteca.runtimeconfig.json
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\bin\Debug\net8.0\ColeccionesBiblioteca.dll
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\bin\Debug\net8.0\ColeccionesBiblioteca.pdb
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.AssemblyInfoInputs.cache
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.AssemblyInfo.cs
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.csproj.CoreCompileInputs.cache
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.dll
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\refint\ColeccionesBiblioteca.dll
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.pdb
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.genruntimeconfig.cache
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ref\ColeccionesBiblioteca.dll
