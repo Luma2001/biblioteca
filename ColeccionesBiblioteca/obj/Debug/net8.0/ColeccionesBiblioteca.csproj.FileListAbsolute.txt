@@ -12,3 +12,4 @@ C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debu
 C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.pdb
 C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.genruntimeconfig.cache
 C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ref\ColeccionesBiblioteca.dll
+C:\Users\norbe\source\repos\ColeccionesBiblioteca\ColeccionesBiblioteca\obj\Debug\net8.0\ColeccionesBiblioteca.sourcelink.json

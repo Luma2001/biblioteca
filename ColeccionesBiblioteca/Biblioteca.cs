@@ -50,6 +50,11 @@ namespace ColeccionesBiblioteca
             foreach (var libro in libros)
                 Console.WriteLine(libro.ToString());
         }
+        public void listarLectores()
+        {
+            foreach (var lector in lectores)
+                Console.WriteLine(lector.ToString());
+        }
 
         public bool eliminarLibro(string titulo) 
         {
@@ -63,7 +68,6 @@ namespace ColeccionesBiblioteca
             }
             return resultado;
         }
-
 
         private Lector buscarLector(string dni)
         {
