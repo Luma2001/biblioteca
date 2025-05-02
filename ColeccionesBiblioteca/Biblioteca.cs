@@ -31,16 +31,7 @@ namespace ColeccionesBiblioteca
             return libroBuscado;
         }
 
-        //private Libro buscarLibroPrestado(string titulo)
-        //{
-        //    Libro libroBuscado = null;
-        //    int i = 0;
-        //    while (i < lectores.LibrosPrestados.Count && !libros[i].Titulo.Equals(titulo))
-        //        i++;
-        //    if (i != libros.Count)
-        //        libroBuscado = libros[i];
-        //    return libroBuscado;
-        //}
+        
 
         public bool agregarLibro(string titulo, string autor, string editorial, string genero)
         {
@@ -103,16 +94,7 @@ namespace ColeccionesBiblioteca
             return lectorBuscado;
         }
 
-        //private Lector buscarLector(string dni)
-        //{
-        //    Lector lectorBuscado=null;
-        //    int i = 0;
-        //    while (i < lectores.Count && !lectores[i].Dni.Equals(dni))
-        //        i++;
-        //    if(i != lectores.Count)
-        //        lectorBuscado=lectores[i];
-        //    return lectorBuscado;
-        //}
+
         public bool altaLector(string nombre,string dni, string direccion)
         {
             bool resultado = false;
