@@ -18,8 +18,8 @@ namespace ColeccionesBiblioteca
             Console.WriteLine(biblioteca.eliminarLibro("Libro5"));
             biblioteca.listarLibros();
 
-            Console.WriteLine("Lector Agregado: " + biblioteca.altaLector("Pedro Vargas", "34222651", "Almirante Brown 700, Ciudad",0));
-            Console.WriteLine("Lector Agregado: " + biblioteca.altaLector("Mariana Martinez", "23789834", "Viamonte 2118, Ciudad",0));
+            Console.WriteLine("Lector Agregado: " + biblioteca.altaLector("Pedro Vargas", "34222651", "Almirante Brown 700, Ciudad"));
+            Console.WriteLine("Lector Agregado: " + biblioteca.altaLector("Mariana Martinez", "23789834", "Viamonte 2118, Ciudad"));
             biblioteca.listarLectores();
             Console.WriteLine(biblioteca.prestarLibro("Libro5", "34222651"));//La respuesta debe ser LIBRO INEXISTENTE
             Console.WriteLine(biblioteca.prestarLibro("Libro6", "34222651"));//La respuesta debe ser "PRESTAMO EXITOSO"

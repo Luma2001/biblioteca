@@ -79,14 +79,14 @@ namespace ColeccionesBiblioteca
                 lectorBuscado=lectores[i];
             return lectorBuscado;
         }
-        public bool altaLector(string nombre,string dni, string direccion,int prestamo)
+        public bool altaLector(string nombre,string dni, string direccion)
         {
             bool resultado = false;
             Lector lector;
             lector = buscarLector(dni);
             if (lector == null)
             {
-                lector = new Lector(nombre, dni, direccion, prestamo);
+                lector = new Lector(nombre, dni, direccion, 0);
                 lectores.Add(lector);
                 resultado = true;
             }
@@ -123,11 +123,10 @@ namespace ColeccionesBiblioteca
         }
 
         public string devolverLibro(string titulo, string autor, string editorial, string genero,string dni) {
-            string resultado = "Libro o Lector inexistente";
+            string resultado;
             
             Lector lector;
             bool libroDevuelto;
-             libroDevuelto= agregarLibro(titulo, autor, editorial, genero);
 
             lector = buscarLector(dni);
 
@@ -135,10 +134,19 @@ namespace ColeccionesBiblioteca
             {
                 resultado = "LECTOR INEXISTENTE";
             }
-            else if(lector != null && libroDevuelto)
+            else 
             {
-                lector.Prestamo -= 1;
-                resultado = "Devolución exitosa";
+                libroDevuelto = agregarLibro(titulo, autor, editorial, genero);
+
+                if (libroDevuelto)
+                {
+                    lector.Prestamo -= 1;
+                    resultado = "DEVOLUCIÓN EXITOSA";
+                } else
+                {
+                    resultado = "LIBRO YA EXISTE EN LA BIBLIOTECA";
+                }
+               
             }
 
             return resultado;
