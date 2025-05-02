@@ -22,7 +22,7 @@ namespace ColeccionesBiblioteca
             this.titulo = titulo;
             this.autor = autor;
             this.editorial = editorial;
-            this.genero = editorial;
+            this.genero = genero;
         }
 
         //Getters and setters
@@ -34,7 +34,7 @@ namespace ColeccionesBiblioteca
         //ToString
         public override string ToString()
         {
-            return $"Título: {Titulo} Autor: {Autor} Editorial: {Editorial} Genero: {Genero}";
+            return $"\t\tTítulo: {Titulo} Autor: {Autor} Editorial: {Editorial} Género: {Genero}";
         }
     }
 }

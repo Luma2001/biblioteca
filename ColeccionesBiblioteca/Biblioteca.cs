@@ -31,6 +31,17 @@ namespace ColeccionesBiblioteca
             return libroBuscado;
         }
 
+        //private Libro buscarLibroPrestado(string titulo)
+        //{
+        //    Libro libroBuscado = null;
+        //    int i = 0;
+        //    while (i < lectores.LibrosPrestados.Count && !libros[i].Titulo.Equals(titulo))
+        //        i++;
+        //    if (i != libros.Count)
+        //        libroBuscado = libros[i];
+        //    return libroBuscado;
+        //}
+
         public bool agregarLibro(string titulo, string autor, string editorial, string genero)
         {
             bool resultado = false;
@@ -52,11 +63,17 @@ namespace ColeccionesBiblioteca
         }
         public void listarLectores()
         {
+            
             foreach (var lector in lectores)
-                Console.WriteLine(lector.ToString());
+            {
+                string libroInfo = string.Join(", \n\t", lector.LibrosPrestados.Select(lp => lp.ToString()));
+                Console.WriteLine($"{lector.ToString()} \n\t\tLista de Libros Prestados: \n\t{libroInfo}");
+            }
+                
         }
 
-        public bool eliminarLibro(string titulo) 
+
+        public bool retirarLibro(string titulo) 
         {
             bool resultado = false;
             Libro libro;
@@ -71,14 +88,31 @@ namespace ColeccionesBiblioteca
 
         private Lector buscarLector(string dni)
         {
+            if (lectores == null || lectores.Count == 0)
+                return null;
+
             Lector lectorBuscado = null;
             int i = 0;
-            while (i < lectores.Count && !lectores[i].Dni.Equals(dni))
+
+            while (i < lectores.Count && (lectores[i].Dni == null || !lectores[i].Dni.Equals(dni)))
                 i++;
-            if(i != lectores.Count)
-                lectorBuscado=lectores[i];
+
+            if (i < lectores.Count)
+                lectorBuscado = lectores[i];
+
             return lectorBuscado;
         }
+
+        //private Lector buscarLector(string dni)
+        //{
+        //    Lector lectorBuscado=null;
+        //    int i = 0;
+        //    while (i < lectores.Count && !lectores[i].Dni.Equals(dni))
+        //        i++;
+        //    if(i != lectores.Count)
+        //        lectorBuscado=lectores[i];
+        //    return lectorBuscado;
+        //}
         public bool altaLector(string nombre,string dni, string direccion)
         {
             bool resultado = false;
@@ -97,10 +131,10 @@ namespace ColeccionesBiblioteca
         public string prestarLibro(string titulo, string dni)
         {
             string resultado = "Libro o Lector inexistente";
-            Libro libro;
-            Lector lector;
-            libro = buscarLibro(titulo);
-            lector = buscarLector(dni);
+            Libro libro= buscarLibro(titulo);
+            Lector lector= buscarLector(dni);
+            
+            
             if (libro == null)
             {
                 resultado = "LIBRO INEXISTENTE";
@@ -115,41 +149,43 @@ namespace ColeccionesBiblioteca
             else if(lector != null && libro!=null)
             {
                 lector.Prestamo += 1;
-                eliminarLibro(libro.Titulo);
+                retirarLibro(libro.Titulo);
+                lector.LibrosPrestados.Add(libro);
+
                 resultado = "PRESTAMO EXITOSO";
             }
 
                 return resultado;
         }
 
-        public string devolverLibro(string titulo, string autor, string editorial, string genero,string dni) {
-            string resultado;
+        public string devolverLibro(string titulo, string dni) 
+        {
+                        
+            Lector lector=buscarLector(dni);
             
-            Lector lector;
-            bool libroDevuelto;
 
-            lector = buscarLector(dni);
-
-            if (lector == null)
+            if(lector == null)
             {
-                resultado = "LECTOR INEXISTENTE";
+                return "LECTOR INEXISTENTE";
             }
+
+            Libro libroDevuelto = lector.LibrosPrestados.FirstOrDefault(libro => libro.Titulo.Equals(titulo, StringComparison.OrdinalIgnoreCase));
+
+            if (libroDevuelto == null)
+            {
+                return "El LECTOR NO TIENE ESTE LIBRO PRESTADO";
+            }
+
+            
             else 
             {
-                libroDevuelto = agregarLibro(titulo, autor, editorial, genero);
-
-                if (libroDevuelto)
-                {
-                    lector.Prestamo -= 1;
-                    resultado = "DEVOLUCIÓN EXITOSA";
-                } else
-                {
-                    resultado = "LIBRO YA EXISTE EN LA BIBLIOTECA";
-                }
-               
+                lector.LibrosPrestados.Remove(libroDevuelto);
+                libros.Add(libroDevuelto);
+                lector.Prestamo -= 1;
+                return "DEVOLUCIÓN EXITOSA"; 
             }
 
-            return resultado;
+            
         }
 
     }
